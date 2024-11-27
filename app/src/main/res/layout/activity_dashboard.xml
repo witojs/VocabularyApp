@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".DashboardActivity">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_greeting"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center|start"
+        android:text="@string/txt_greeting"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_user"
+        app:layout_constraintEnd_toStartOf="@id/iv_user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/iv_user"
+        tools:text="Hi, Susan!" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_user"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_dashboard"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_dashboard"
+        app:layout_constraintEnd_toEndOf="@id/iv_user"
+        app:layout_constraintStart_toStartOf="@id/tv_greeting"
+        app:layout_constraintTop_toBottomOf="@id/tv_greeting">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/pb_achieved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:indeterminate="false"
+            android:progress="15"
+            app:indicatorColor="@color/white"
+            app:indicatorSize="70dp"
+            app:indicatorTrackGapSize="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:trackColor="@color/colorTrack"
+            app:trackThickness="8dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_achieved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/pb_achieved"
+            app:layout_constraintEnd_toEndOf="@id/pb_achieved"
+            app:layout_constraintStart_toStartOf="@id/pb_achieved"
+            app:layout_constraintTop_toTopOf="@id/pb_achieved"
+            tools:text="15%" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_vocab_available"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/txt_available_vocabulary"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/pb_achieved"
+            app:layout_constraintTop_toTopOf="@id/pb_achieved" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title_vocab_available_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/txt_available_value"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/pb_achieved"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_vocab_available" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_my_vocab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/txt_my_vocab"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@id/cl_dashboard"
+        app:layout_constraintTop_toBottomOf="@id/cl_dashboard" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/ic_trash"
+        app:layout_constraintEnd_toEndOf="@id/cl_dashboard"
+        app:layout_constraintTop_toBottomOf="@id/cl_dashboard" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/iv_add"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/ic_plus"
+        app:layout_constraintEnd_toStartOf="@id/iv_delete"
+        app:layout_constraintTop_toBottomOf="@id/cl_dashboard" />
+
+    <TextView
+        android:id="@+id/btn_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_button_start"
+        android:backgroundTint="@color/colorRedButton"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="5dp"
+        android:text="@string/txt_cancel"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cl_dashboard"
+        app:layout_constraintTop_toBottomOf="@id/cl_dashboard" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/iv_delete"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/tv_my_vocab"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_vocab"
+        tools:listitem="@layout/item_category"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_vocab"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        tools:listitem="@layout/item_vocabulary"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/iv_delete"
+        app:layout_constraintStart_toStartOf="@id/tv_my_vocab"
+        app:layout_constraintTop_toBottomOf="@id/rv_category" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
